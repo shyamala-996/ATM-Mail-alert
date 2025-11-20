@@ -35,7 +35,12 @@ while attempts < MAX_attempts:
     if user_pin == PIN:
         print("PIN verified! Welcome.")
         print(f"Your current balance is: ₹{balance}")
-        amount = int(input("Enter amount to withdraw: "))
+    else:
+        attempts += 1
+        print(f"Wrong PIN! Attempts left: {MAX_attempts - attempts}")
+        continue
+        
+    amount = int(input("Enter amount to withdraw: "))
 
     if amount <= 0:
         print("Invalid amount!")
@@ -49,11 +54,9 @@ while attempts < MAX_attempts:
         print(f"Remaining balance: ₹{balance}")
         print("Thank you for using the ATM!")
         break
-else:
-        attempts += 1
-        print(f"Wrong PIN! Attempts left: {MAX_attempts - attempts}")
 
 # If exceeded attempts
 if attempts >= MAX_attempts:
     print("❌ ATM Card Blocked! Too many wrong attempts.")
     send_mail_alert()
+
