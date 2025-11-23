@@ -2,9 +2,9 @@ import smtplib
 
 # send email alert
 def send_mail_alert():
-    sender_email = "stellamic1998@gmail.com"
-    sender_password = "zzqj gfiv gowb mctz"
-    receiver_email = "stellamic1998@gmail.com"
+    sender_email = "_________________@gmail.com"
+    sender_password = "--------------"
+    receiver_email = "_____________@gmail.com"
 
     subject = "ATM Alert: Wrong PIN Attempts"
     body = "Warning! Your ATM PIN was entered incorrectly more than 3 times."
@@ -59,4 +59,5 @@ while attempts < MAX_attempts:
 if attempts >= MAX_attempts:
     print("❌ ATM Card Blocked! Too many wrong attempts.")
     send_mail_alert()
+
 
